@@ -87,19 +87,31 @@ var wild_Draw = UIImage(named: "Wild_Draw.png")
 
 /// قم بإنشاء الستركت هنا
 
-// struct ...
-
+struct Card {
+    var color: String
+    var number: Int
+    func imageName() -> String {
+        return "\(color)_\(number).png"
+    }
+}
+var colors = ["Blue","Green","Red","Yellow"]
+var cards : [Card] = []
+for color in colors {
+    for A in 0...9 {
+        cards.append(Card(color: color, number: A))
+    }
+}
 
 
 
 
 // لا تقم بإزالة الملاحظات إلا عند وصولك للمطلوب الثالث
 
-//
-//let randomCard = cards.randomElement()!
-//let randomCardImage = UIImage(named: randomCard.imageName())
-//
-//
-//let cardImages = cards.map{UIImage(named: $0.imageName())}
-//randomCardImage
-//cardImages
+
+let randomCard = cards.randomElement()!
+let randomCardImage = UIImage(named: randomCard.imageName())
+
+
+let cardImages = cards.map{UIImage(named: $0.imageName())}
+randomCardImage
+cardImages
