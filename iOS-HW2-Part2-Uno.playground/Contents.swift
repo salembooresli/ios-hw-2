@@ -92,19 +92,29 @@ struct Card {
     var number: Int
     func imageName() -> String {
         return "\(color)_\(number).png"
+       
     }
 }
 var colors = ["Blue","Green","Red","Yellow"]
 var cards : [Card] = []
+for color in colors {
+    for A in 0...9{
+        cards.append(Card(color:color, number: A))
+    }
+}
+
 for color in colors {
     for A in 0...9 {
         cards.append(Card(color: color, number: A))
     }
 }
 
-
-
-
+//الجزءالرابع (البونص)
+for color in colors {
+     for B in 0...9  {
+        cards.append(Card(color: color, number: B))
+   }
+}
 // لا تقم بإزالة الملاحظات إلا عند وصولك للمطلوب الثالث
 
 
